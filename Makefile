@@ -12,12 +12,12 @@
 PWD:=$(shell pwd)
 
 all:  clean
-	mkdir --parents $(PWD)/build/Boilerplate.AppDir	
+	mkdir --parents $(PWD)/build/Boilerplate.AppDir/brave
 	apprepo --destination=$(PWD)/build appdir boilerplate brave-browser-nightly libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0 libreadline8
 
 	cp /tmp/apprepo/brave-browser*nightly*.deb $(PWD)/build/build.deb
 	dpkg -x $(PWD)/build/build.deb $(PWD)/build
-	cp -r $(PWD)/build/opt/brave*/brave $(PWD)/build/Boilerplate.AppDir
+	cp -r $(PWD)/build/opt/brave*/brave*/* $(PWD)/build/Boilerplate.AppDir/brave
 
 	echo "LD_LIBRARY_PATH=\$${LD_LIBRARY_PATH}:\$${APPDIR}/brave" >> $(PWD)/build/Boilerplate.AppDir/AppRun
 	echo "export LD_LIBRARY_PATH=\$${LD_LIBRARY_PATH}" >> $(PWD)/build/Boilerplate.AppDir/AppRun
