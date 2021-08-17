@@ -23,7 +23,7 @@ all:  clean
 	echo "export LD_LIBRARY_PATH=\$${LD_LIBRARY_PATH}" >> $(PWD)/build/Boilerplate.AppDir/AppRun
 	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
 	echo '' >> $(PWD)/build/Boilerplate.AppDir/AppRun
-	echo 'exec $${APPDIR}/brave/brave "$${@}"' >> $(PWD)/build/Boilerplate.AppDir/AppRun
+	echo 'exec $${APPDIR}/brave/brave-browser-nightly "$${@}"' >> $(PWD)/build/Boilerplate.AppDir/AppRun
 
 	rm --force $(PWD)/build/Boilerplate.AppDir/*.svg 		|| true
 	rm --force $(PWD)/build/Boilerplate.AppDir/*.desktop    || true
