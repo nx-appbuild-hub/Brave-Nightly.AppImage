@@ -15,7 +15,7 @@ all:  clean
 	mkdir --parents $(PWD)/build/Boilerplate.AppDir/brave
 	apprepo --destination=$(PWD)/build appdir boilerplate brave-browser-nightly libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0 libreadline8
 
-	cp /tmp/apprepo/brave-browser*nightly*.deb $(PWD)/build/build.deb
+	cp /tmp/apprepo/brave-browser*.deb $(PWD)/build/build.deb
 	dpkg -x $(PWD)/build/build.deb $(PWD)/build
 	cp -r $(PWD)/build/opt/brave*/brave*/* $(PWD)/build/Boilerplate.AppDir/brave
 
